@@ -52,11 +52,11 @@ x_vec = rnorm(25, mean = 5, sd = 4)
 (x_vec - mean(x_vec)) / sd(x_vec)
 ```
 
-    ##  [1]  0.16528489 -0.09703669  0.83374813 -0.35427180 -0.29152830  0.38239250
-    ##  [7] -2.52799068  0.15428917  1.02788962  0.64520210 -0.28858048  2.21027606
-    ## [13] -0.46119477  0.11912460 -0.09140329  0.12982965  1.26769894 -1.17342289
-    ## [19]  0.66068562  0.46476794  1.21534360 -1.13192333 -1.15442093 -0.29438134
-    ## [25] -1.41037832
+    ##  [1]  0.96804824 -0.69279741  0.23858771  0.58108881 -0.14004900 -2.32683557
+    ##  [7]  1.81696593  0.08724519 -0.22532599 -0.92000657 -1.57784276  0.58601313
+    ## [13]  1.25528653  0.36566483  0.46896138 -0.64876835  0.90910766 -0.62470640
+    ## [19]  1.72433791 -1.54357370  0.30954069 -0.08338693 -0.61401464  0.43622597
+    ## [25] -0.34976667
 
 ``` r
 z_scores = function(x){
@@ -68,11 +68,11 @@ z_scores = function(x){
 z_scores(x = x_vec)
 ```
 
-    ##  [1]  0.16528489 -0.09703669  0.83374813 -0.35427180 -0.29152830  0.38239250
-    ##  [7] -2.52799068  0.15428917  1.02788962  0.64520210 -0.28858048  2.21027606
-    ## [13] -0.46119477  0.11912460 -0.09140329  0.12982965  1.26769894 -1.17342289
-    ## [19]  0.66068562  0.46476794  1.21534360 -1.13192333 -1.15442093 -0.29438134
-    ## [25] -1.41037832
+    ##  [1]  0.96804824 -0.69279741  0.23858771  0.58108881 -0.14004900 -2.32683557
+    ##  [7]  1.81696593  0.08724519 -0.22532599 -0.92000657 -1.57784276  0.58601313
+    ## [13]  1.25528653  0.36566483  0.46896138 -0.64876835  0.90910766 -0.62470640
+    ## [19]  1.72433791 -1.54357370  0.30954069 -0.08338693 -0.61401464  0.43622597
+    ## [25] -0.34976667
 
 ``` r
 y_vec = rnorm(40, mean = 12, sd = 0.3)
@@ -80,14 +80,14 @@ y_vec = rnorm(40, mean = 12, sd = 0.3)
 z_scores(y_vec)
 ```
 
-    ##  [1] -0.0283424787  0.0827346915 -0.3899359684 -0.9880498834  2.5929243391
-    ##  [6]  0.3415918795  1.5393712665  1.3943959862  0.1495693420 -0.8018941207
-    ## [11]  0.7751614496  0.6386825036 -0.5504583554  0.9652008497  1.4122796155
-    ## [16]  0.0024721090  0.6869519048 -1.0292450466 -0.2470494775 -1.0858730862
-    ## [21] -0.6486526540 -0.6207145730  0.0004975427  0.2691770301 -0.3700321729
-    ## [26]  0.6715836845  0.8109231277 -0.4334820521 -1.4637870422  0.6450186525
-    ## [31] -2.5561279299 -0.8547496999  0.6683041016 -0.3069262483 -0.6299832397
-    ## [36]  1.2415132838  0.7770885177 -1.4275658511 -1.3303620537  0.0977900561
+    ##  [1] -1.093944443  2.291141540 -1.683140989 -0.723967970 -0.162660278
+    ##  [6]  0.140190069 -1.108977031 -0.382398892 -1.565334987 -0.535891862
+    ## [11]  1.085579144 -0.691070352  0.409111456  0.570325543  1.211291018
+    ## [16]  0.171711045 -0.107676679  0.491758697 -1.755208003  1.039347028
+    ## [21]  0.132226034  0.729610429 -1.477035876  1.040934701  0.260120313
+    ## [26]  0.395019492  0.008723803  1.853845821 -0.124766261  0.442394948
+    ## [31] -1.079291021  1.603360894  0.369187646 -0.721848456  0.445908008
+    ## [36] -0.241963975 -2.066043547  0.573224644  0.199808994  0.056399351
 
 How great is this?
 
@@ -132,14 +132,14 @@ z_scores(mtcars)
 z_scores(x = y_vec)
 ```
 
-    ##  [1] -0.0283424787  0.0827346915 -0.3899359684 -0.9880498834  2.5929243391
-    ##  [6]  0.3415918795  1.5393712665  1.3943959862  0.1495693420 -0.8018941207
-    ## [11]  0.7751614496  0.6386825036 -0.5504583554  0.9652008497  1.4122796155
-    ## [16]  0.0024721090  0.6869519048 -1.0292450466 -0.2470494775 -1.0858730862
-    ## [21] -0.6486526540 -0.6207145730  0.0004975427  0.2691770301 -0.3700321729
-    ## [26]  0.6715836845  0.8109231277 -0.4334820521 -1.4637870422  0.6450186525
-    ## [31] -2.5561279299 -0.8547496999  0.6683041016 -0.3069262483 -0.6299832397
-    ## [36]  1.2415132838  0.7770885177 -1.4275658511 -1.3303620537  0.0977900561
+    ##  [1] -1.093944443  2.291141540 -1.683140989 -0.723967970 -0.162660278
+    ##  [6]  0.140190069 -1.108977031 -0.382398892 -1.565334987 -0.535891862
+    ## [11]  1.085579144 -0.691070352  0.409111456  0.570325543  1.211291018
+    ## [16]  0.171711045 -0.107676679  0.491758697 -1.755208003  1.039347028
+    ## [21]  0.132226034  0.729610429 -1.477035876  1.040934701  0.260120313
+    ## [26]  0.395019492  0.008723803  1.853845821 -0.124766261  0.442394948
+    ## [31] -1.079291021  1.603360894  0.369187646 -0.721848456  0.445908008
+    ## [36] -0.241963975 -2.066043547  0.573224644  0.199808994  0.056399351
 
 ## multiple outputs
 
@@ -174,4 +174,179 @@ mean_and_sd(y_vec)
     ## # A tibble: 1 x 2
     ##    mean    sd
     ##   <dbl> <dbl>
-    ## 1  12.0 0.298
+    ## 1  12.0 0.378
+
+## different sample size, means, and sds
+
+``` r
+sim_data =
+  tibble(
+    x = rnorm(30, mean = 2, sd = 3)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  1.52  3.02
+
+## Multiple input
+
+using a function that simulates data, computes the mean and sd.
+
+tricky thing - which is things that are different inside or outside a
+function?
+
+``` r
+sim_mean_sd = function(n, mu = 3, sigma = 4){
+  
+  # do checks on inputs
+  
+  sim_data =
+  tibble(
+    x = rnorm(n, mean = mu, sd = sigma)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+  
+   
+}
+
+
+sim_mean_sd(30, 4, 3)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  2.52  2.82
+
+``` r
+sim_mean_sd(30)
+```
+
+    ## # A tibble: 1 x 2
+    ##    mean    sd
+    ##   <dbl> <dbl>
+    ## 1  3.56  4.10
+
+## Napoleon Dynamite
+
+``` r
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+dynamite_html = read_html(url)
+
+review_titles = 
+  dynamite_html %>%
+  html_elements(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  dynamite_html %>%
+  html_elements("#cm_cr-review_list .review-rating") %>%
+  html_text()
+
+review_text = 
+  dynamite_html %>%
+  html_elements(".review-text-content span") %>%
+  html_text()
+
+reviews = 
+  tibble(
+    title = review_titles,
+    stars = review_stars,
+    text = review_text
+  )
+```
+
+More pages of reviews
+
+write a function that gets reviews based on page url.
+
+``` r
+get_page_reviews = function(page_url){
+  
+  page_html = read_html(page_url)
+
+review_titles = 
+  page_html %>%
+  html_elements(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  page_html %>%
+  html_elements("#cm_cr-review_list .review-rating") %>%
+  html_text()
+
+review_text = 
+  page_html %>%
+  html_elements(".review-text-content span") %>%
+  html_text()
+
+reviews = 
+  tibble(
+    title = review_titles,
+    stars = review_stars,
+    text = review_text
+  )
+
+return(reviews)
+}
+
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+get_page_reviews(url)
+```
+
+    ## # A tibble: 10 x 3
+    ##    title                                                 stars   text           
+    ##    <chr>                                                 <chr>   <chr>          
+    ##  1 Vintage                                               5.0 ou~ "\n  Easy to o~
+    ##  2 too many commercials                                  1.0 ou~ "\n  5 minutes~
+    ##  3 this film is so good!                                 5.0 ou~ "\n  VOTE FOR ~
+    ##  4 Good movie                                            5.0 ou~ "\n  Weird sto~
+    ##  5 I Just everyone to know this....                      5.0 ou~ "\n  VOTE FOR ~
+    ##  6 the cobweb in his hair during the bike ramp scene lol 5.0 ou~ "\n  5 stars f~
+    ##  7 Best quirky movie ever                                5.0 ou~ "\n  You all k~
+    ##  8 Classic Film                                          5.0 ou~ "\n  Had to or~
+    ##  9 hehehehe                                              5.0 ou~ "\n  goodjobbo~
+    ## 10 Painful                                               1.0 ou~ "\n  I think I~
+
+``` r
+base_url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
+
+urls = str_c(base_url, 1:5)
+
+bind_rows(
+  get_page_reviews(urls[1]),
+  get_page_reviews(urls[2]),
+  get_page_reviews(urls[3]),
+  get_page_reviews(urls[4]),
+  get_page_reviews(urls[5]))
+```
+
+    ## # A tibble: 50 x 3
+    ##    title                                                 stars   text           
+    ##    <chr>                                                 <chr>   <chr>          
+    ##  1 Vintage                                               5.0 ou~ "\n  Easy to o~
+    ##  2 too many commercials                                  1.0 ou~ "\n  5 minutes~
+    ##  3 this film is so good!                                 5.0 ou~ "\n  VOTE FOR ~
+    ##  4 Good movie                                            5.0 ou~ "\n  Weird sto~
+    ##  5 I Just everyone to know this....                      5.0 ou~ "\n  VOTE FOR ~
+    ##  6 the cobweb in his hair during the bike ramp scene lol 5.0 ou~ "\n  5 stars f~
+    ##  7 Best quirky movie ever                                5.0 ou~ "\n  You all k~
+    ##  8 Classic Film                                          5.0 ou~ "\n  Had to or~
+    ##  9 hehehehe                                              5.0 ou~ "\n  goodjobbo~
+    ## 10 Painful                                               1.0 ou~ "\n  I think I~
+    ## # ... with 40 more rows

@@ -101,13 +101,136 @@ mean_and_sd(y_vec)
 ```
 
 
+## different sample size, means, and sds
+
+```{r}
+sim_data =
+  tibble(
+    x = rnorm(30, mean = 2, sd = 3)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+```
+
+## Multiple input
+using a function that simulates data, computes the mean and sd.
+
+tricky thing - which is things that are different inside or outside a function?
+
+```{r}
+sim_mean_sd = function(n, mu = 3, sigma = 4){
+  
+  # do checks on inputs
+  
+  sim_data =
+  tibble(
+    x = rnorm(n, mean = mu, sd = sigma)
+  )
+
+sim_data %>% 
+  summarize(
+    mean = mean(x),
+    sd = sd(x)
+  )
+  
+   
+}
 
 
+sim_mean_sd(30, 4, 3)
+
+sim_mean_sd(30)
+```
+
+## Napoleon Dynamite
+
+```{r}
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+dynamite_html = read_html(url)
+
+review_titles = 
+  dynamite_html %>%
+  html_elements(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  dynamite_html %>%
+  html_elements("#cm_cr-review_list .review-rating") %>%
+  html_text()
+
+review_text = 
+  dynamite_html %>%
+  html_elements(".review-text-content span") %>%
+  html_text()
+
+reviews = 
+  tibble(
+    title = review_titles,
+    stars = review_stars,
+    text = review_text
+  )
+
+```
 
 
+More pages of reviews
+
+write a function that gets reviews based on page url.
+
+```{r}
+get_page_reviews = function(page_url){
+  
+  page_html = read_html(page_url)
+
+review_titles = 
+  page_html %>%
+  html_elements(".a-text-bold span") %>%
+  html_text()
+
+review_stars = 
+  page_html %>%
+  html_elements("#cm_cr-review_list .review-rating") %>%
+  html_text()
+
+review_text = 
+  page_html %>%
+  html_elements(".review-text-content span") %>%
+  html_text()
+
+reviews = 
+  tibble(
+    title = review_titles,
+    stars = review_stars,
+    text = review_text
+  )
+
+return(reviews)
+}
+
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+get_page_reviews(url)
+
+```
 
 
+```{r}
+base_url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
 
+urls = str_c(base_url, 1:5)
+
+bind_rows(
+  get_page_reviews(urls[1]),
+  get_page_reviews(urls[2]),
+  get_page_reviews(urls[3]),
+  get_page_reviews(urls[4]),
+  get_page_reviews(urls[5]))
+```
 
 
 
